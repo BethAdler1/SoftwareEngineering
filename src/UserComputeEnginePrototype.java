@@ -1,7 +1,7 @@
 
 import project.annotations.NetworkAPIPrototype;
 //The Client Prototype
-
+import project.*;
 public class UserComputeEnginePrototype {
     
     @NetworkAPIPrototype
