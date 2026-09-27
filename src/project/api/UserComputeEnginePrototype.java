@@ -1,7 +1,7 @@
-
+package project.api;
 import project.annotations.NetworkAPIPrototype;
 //The Client Prototype
-import project.*;
+
 public class UserComputeEnginePrototype {
     
     @NetworkAPIPrototype
@@ -12,9 +12,9 @@ public class UserComputeEnginePrototype {
         DelimiterOptions customDelimiters = new DelimiterOptions() {};
 
         //user specifies the input source, output destination, and delimiter
-        JobConfigResult custom = api.configureJob(source, destination, customDelimiters);
+        JobConfigResult customDel = api.configureJob(source, destination, customDelimiters);
 
         //allow the user to opt to use some default delimiter if they don't want to specify one
-        JobConfigResult default = api.configureJobDefault(source, destination);
+        JobConfigResult defaultDel = api.configureJobDefault(source, destination);
     }
 }

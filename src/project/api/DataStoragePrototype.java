@@ -1,5 +1,6 @@
+package project.api;
 import project.annotations.ProcessAPIPrototype;
-import project.*;
+
 //The Client Prototype
 public class DataStoragePrototype {
     

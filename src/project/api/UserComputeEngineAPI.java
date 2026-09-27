@@ -1,6 +1,6 @@
-
+package project.api;
 import project.annotations.NetworkAPI;
-import project.*;
+
 
 //The API Interface
 @NetworkAPI

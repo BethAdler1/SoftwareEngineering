@@ -1,5 +1,6 @@
+package project.api;
 import project.annotations.ProcessAPI;
-import project.*;
+
 //The API interface
 @ProcessAPI
 public interface DataStorageAPI {
