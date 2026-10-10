@@ -9,7 +9,16 @@ public class UserComputeEnginePrototype {
         //The prototype takes the API as its only parameter
         InputSource source = new InputSource() {};
         OutputDestination destination = new OutputDestination() {};
-        DelimiterOptions customDelimiters = new DelimiterOptions() {};
+        DelimiterOptions customDelimiters = new DelimiterOptions() {
+            @Override
+            public char getDelimiter() {
+                return ','; //mock custom delimiter
+            }
+            @Override
+            public boolean isDefault() {
+                return false; //indicating this is a custom delimiter set
+            }
+        };
 
         //user specifies the input source, output destination, and delimiter
         JobConfigResult customDel = api.configureJob(source, destination, customDelimiters);
