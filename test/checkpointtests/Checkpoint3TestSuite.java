@@ -1,4 +1,4 @@
-package project.checkpointtests;
+package checkpointtests;
 
 import java.lang.annotation.Annotation;
 import java.util.Collection;
@@ -106,7 +106,7 @@ public class Checkpoint3TestSuite {
                 "No integration test found using the correct test infrastructure!");
         
     }
-    
+
     private Class<?> getApiClass(Class<? extends Annotation> apiAnnotation) {
         for (CtType<?> clazz : allSrcTypes) {
             if (clazz.isInterface()) {
