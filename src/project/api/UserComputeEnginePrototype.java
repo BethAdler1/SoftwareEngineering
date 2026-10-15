@@ -1,6 +1,5 @@
 package project.api;
 import project.annotations.NetworkAPIPrototype;
-//The Client Prototype
 
 public class UserComputeEnginePrototype {
     

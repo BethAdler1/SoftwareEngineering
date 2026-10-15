@@ -1,4 +1,4 @@
-package checkpointtests;
+package smoketests;
 import org.junit.jupiter.api.Test;
 import project.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
