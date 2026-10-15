@@ -33,6 +33,8 @@ test {
 
 	//exclude the integration test from standard gradle test runs
 	filter {
-		excludeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
+		includeTestsMatching "checkpointtests.Checkpoint3TestSuite"
+        includeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
+		//excludeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
 	}
 }
