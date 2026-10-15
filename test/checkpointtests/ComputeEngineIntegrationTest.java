@@ -1,10 +1,15 @@
 package checkpointtests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
-import project.api.*;
+import project.api.ComputationAPI;
+import project.api.DataStorageAPI;
+import project.api.UserComputeEngineAPI;
+import project.api.ComputationImpl;
+import project.api.UserComputeEngineImpl;
+import project.api.JobConfigResult;
 
 public class ComputeEngineIntegrationTest {
     

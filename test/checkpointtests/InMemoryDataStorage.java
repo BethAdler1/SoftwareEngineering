@@ -1,5 +1,10 @@
 package checkpointtests;
-import project.api.*;
+import project.api.DataStorageAPI;
+import project.api.DataStream;
+import project.api.InputSource;
+import project.api.OutputDestination;
+import project.api.WriteResult;
+
 import java.util.List;
 
 public class InMemoryDataStorage implements DataStorageAPI {

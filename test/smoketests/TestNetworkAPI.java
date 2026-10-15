@@ -1,8 +1,16 @@
 package smoketests;
 import org.junit.jupiter.api.Test;
-import project.api.*;
+import project.api.ComputationAPI;
+import project.api.DataStorageAPI;
+import project.api.InputSource;
+import project.api.OutputDestination;
+import project.api.DelimiterOptions;
+import project.api.UserComputeEngineAPI;
+import project.api.UserComputeEngineImpl;
+import project.api.JobConfigResult;
+
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 public class TestNetworkAPI {
     
     @Test

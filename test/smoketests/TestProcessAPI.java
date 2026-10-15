@@ -1,7 +1,7 @@
 package smoketests;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.mock;
 
 import project.api.DataStorageAPI;
 import project.api.DataStorageImpl;
