@@ -1,15 +1,16 @@
 package project.api;
+import java.util.List;
+import java.util.Random;
 
 public class ComputationImpl implements ComputationAPI {
     
     @Override
     public ComputationResult performComputation(DataStream inputData, ComputationConfig config) {
         // Extract N number of trials from the data stream
-        int n = 1000000; //default
+        
         List<Integer> data = inputData.getData();
-        if (data != null && !data.isEmpty()) {
-            n = data.get(0); // read the first integer from the stream
-        }
+        final int n = (data != null && !data.isEmpty()) ? data.get(0) : 1000000; // Use the first integer from the stream if available, otherwise default to 1,000,000{
+          
         // Run the Monte Carlo simulation trials
         long pointsInsideCircle = 0;
         Random random = new Random();
@@ -28,7 +29,16 @@ public class ComputationImpl implements ComputationAPI {
         double estimatedPi = (n > 0) ? 4.0 * ((double) pointsInsideCircle / n) : 0.0;
 
         //Return the result object
-        return new ComputationResult()
-        return null;
+        return new ComputationResult() {
+            @Override
+            public double getResultValue() {
+                return estimatedPi;
+            }
+
+            @Override
+            public long getExecutionMetric() {
+                return n; // Replace with actual execution time if needed
+            }
+        };
     }
 }
