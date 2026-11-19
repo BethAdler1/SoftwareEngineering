@@ -32,7 +32,13 @@ public class InMemoryDataStorage implements DataStorageAPI {
             for (Integer num : data.getData()) {
                 inMemoryDestination.getOutputLines().add(num.toString());
             }
-            return new WriteResult(){};
+            
+            return new WriteResult(){
+                @Override
+                public boolean isWriteSuccessful() {
+                    return true;
+                }
+            };
         }
         return null;
     }
