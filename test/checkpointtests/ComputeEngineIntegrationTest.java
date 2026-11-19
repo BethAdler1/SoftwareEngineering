@@ -1,6 +1,10 @@
 package checkpointtests;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +30,20 @@ public class ComputeEngineIntegrationTest {
 
         //Execute the job config using default deliminters (aka no delimiter specifiied)
         JobConfigResult result = networkEngine.configureJobDefault(inputSource, outputDestination);
+
+        assertNotNull(result, "JobConfigResult should not be null.");
+        assertTrue(result.isSuccessful(), "Job configuration should be successful.");
+
+        List<String> writtenOutputs = outputDestination.getOutputLines();
+        assertNotNull(writtenOutputs, "Written outputs should not be null.");
+        assertFalse(writtenOutputs.isEmpty(), "Written outputs should not be empty.");
+
+        for (String entry : writtenOutputs) {
+            int parsedValue = Integer.parseInt(entry.trim());
+            assertTrue(
+                parsedValue >= 0 && parsedValue <= 400, "Expected scaled pi estimate in [0, 400], but got: " + parsedValue);
+            System.out.println("Output written to destination: " + parsedValue);
+        }
 
         //verify componenets can execute even if computation returns null/fails for now
         //bc computation isn't implemented yet, this will fail or return null

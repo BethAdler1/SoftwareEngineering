@@ -22,29 +22,27 @@ public class UserComputeEngineImpl implements UserComputeEngineAPI {
         //passing default config for now
         ComputationConfig config = null;
         ComputationResult computationResult = computationAPI.performComputation(inputData, config);
+        
+        final List<Integer> singleOutput = (computationResult != null)
+                ? Collections.singletonList((int) Math.round(computationResult.getResultValue() * 100.0))
+                : Collections.emptyList();
 
-        //wrap the computation result into an output Datastream, since dataStream provides List<Integer> getData() the computed result can be into a list format dataStore can write
-        DataStream outputData = new DataStream() {    
+        DataStream outputData = new DataStream() {
             @Override
             public List<Integer> getData() {
-                if (computationResult == null) {
-                    return Collections.emptyList();
-                }
-                //wrap the computed result into a list format
-                return Collections.singletonList((int) computationResult.getResultValue() * 100);
+                return singleOutput;
             }
         };
         //Request data storage to write the output data stream to the destination
         WriteResult writeResult = dataStorageAPI.writeOutputData(destination, outputData);
-
         final boolean writeSucceeded = (writeResult != null) ? writeResult.isWriteSuccessful() : true;
-        
+        final boolean jobSucceeded = (computationResult != null) && writeSucceeded;
         //Return a job configuration result status back to the user
         return new JobConfigResult() {
             //add methods required by jobConfigResult interface
             @Override
             public boolean isSuccessful() {
-                return computationResult != null && writeSucceeded;
+                return jobSucceeded;
             }
         };
     }
