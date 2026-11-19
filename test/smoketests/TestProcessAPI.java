@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 
 import project.api.DataStorageAPI;
-import project.api.DataStorageImpl;
 import project.api.DataStream;
 import project.api.InputSource;
 import project.api.OutputDestination;
 import project.api.WriteResult;
+import project.api.impl.DataStorageImpl;
 
 public class TestProcessAPI {
 

@@ -8,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import project.api.ComputationAPI;
-import project.api.ComputationImpl;
 import project.api.ComputationResult;
 import project.api.ComputationConfig;
 import project.api.DataStream;
+import project.api.impl.ComputationImpl;
 
 public class TestComputationAPI {
 

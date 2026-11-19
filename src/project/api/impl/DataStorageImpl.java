@@ -1,4 +1,4 @@
-package project.api;
+package project.api.impl;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,6 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import project.api.DataStorageAPI;
+import project.api.DataStream;
+import project.api.FileInputSource;
+import project.api.FileOutputDestination;
+import project.api.InputSource;
+import project.api.OutputDestination;
+import project.api.WriteResult;
 
 public class DataStorageImpl implements DataStorageAPI {
     

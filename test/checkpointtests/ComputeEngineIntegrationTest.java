@@ -11,8 +11,8 @@ import org.junit.jupiter.api.Test;
 import project.api.ComputationAPI;
 import project.api.DataStorageAPI;
 import project.api.UserComputeEngineAPI;
-import project.api.ComputationImpl;
-import project.api.UserComputeEngineImpl;
+import project.api.impl.ComputationImpl;
+import project.api.impl.UserComputeEngineImpl;
 import project.api.JobConfigResult;
 
 public class ComputeEngineIntegrationTest {

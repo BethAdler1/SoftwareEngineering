@@ -1,5 +1,10 @@
-package project.api;
+package project.api.proto;
 import project.annotations.ProcessAPIPrototype;
+import project.api.DataStorageAPI;
+import project.api.DataStream;
+import project.api.InputSource;
+import project.api.OutputDestination;
+import project.api.WriteResult;
 
 //The Client Prototype
 public class DataStoragePrototype {

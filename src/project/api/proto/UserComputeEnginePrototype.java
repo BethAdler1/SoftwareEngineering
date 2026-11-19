@@ -1,5 +1,10 @@
-package project.api;
+package project.api.proto;
 import project.annotations.NetworkAPIPrototype;
+import project.api.DelimiterOptions;
+import project.api.InputSource;
+import project.api.JobConfigResult;
+import project.api.OutputDestination;
+import project.api.UserComputeEngineAPI;
 
 public class UserComputeEnginePrototype {
     
