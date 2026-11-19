@@ -1,13 +1,17 @@
 package smoketests;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import project.api.ComputationAPI;
-import project.api.ComputationImpl;
 import project.api.ComputationResult;
 import project.api.ComputationConfig;
 import project.api.DataStream;
+import project.api.impl.ComputationImpl;
 
 public class TestComputationAPI {
 
@@ -23,7 +27,13 @@ public class TestComputationAPI {
        ComputationResult result = computationEngine.performComputation(mockDataStream, mockConfig);
     
         //Asserting the result to check if it is null as expected for the smoke test
-       assertNull(result, "The computation result should be null for the smoke test.");
+        assertNotNull(result, "The computation result should not be null.");
+        assertEquals(1_000_000L, result.getExecutionMetric(), "Expected default 1,000,000 trials.");
+        assertTrue(
+                result.getResultValue() >= 0.0 && result.getResultValue() <= 4.0,
+                "Estimated pi should be within [0.0, 4.0]."
+        );
+       //assertNull(result, "The computation result should be null for the smoke test.");
     }
     
 }

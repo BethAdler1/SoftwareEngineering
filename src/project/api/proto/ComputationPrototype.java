@@ -1,5 +1,9 @@
-package project.api;
+package project.api.proto;
 import project.annotations.ConceptualAPIPrototype;
+import project.api.ComputationAPI;
+import project.api.ComputationConfig;
+import project.api.ComputationResult;
+import project.api.DataStream;
 
 public class ComputationPrototype {
     

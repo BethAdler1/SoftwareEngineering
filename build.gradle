@@ -32,9 +32,9 @@ test {
     useJUnitPlatform()
 
 	//exclude the integration test from standard gradle test runs
-	filter {
-		includeTestsMatching "checkpointtests.Checkpoint3TestSuite"
-        includeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
-		//excludeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
-	}
+//	filter {
+//		includeTestsMatching "checkpointtests.Checkpoint3TestSuite"
+  //      includeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
+	//	excludeTestsMatching "checkpointtests.ComputeEngineIntegrationTest"
+	//}
 }
