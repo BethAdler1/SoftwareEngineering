@@ -23,7 +23,7 @@ public class TestComputationAPI {
        ComputationResult result = computationEngine.performComputation(mockDataStream, mockConfig);
     
         //Asserting the result to check if it is null as expected for the smoke test
-       assertNull(result, "The computation result should be null for the smoke test.");
+       assertNull(result);
     }
     
 }
