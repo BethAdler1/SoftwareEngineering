@@ -9,8 +9,10 @@ import project.api.UserComputeEngineAPI;
 import project.api.UserComputeEngineImpl;
 import project.api.JobConfigResult;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
+
 import static org.mockito.Mockito.mock;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 public class TestNetworkAPI {
     
     @Test
@@ -30,7 +32,10 @@ public class TestNetworkAPI {
         JobConfigResult defaultResult = engineAPI.configureJobDefault(mockSource, mockDestination);
 
         //Assert that results return null currently
-        assertNull(customResult);
-        assertNull(defaultResult);
+        assertNotNull(customResult, "expected a non null jobConfigResult for custom job configuration");
+        assertNotNull(defaultResult, "expected a non null jobConfigResult for default job configuration");
+        //unstubbed mock computationAPI, performComputation resturns null, so jobsucceeded also evaluates to false in usercomputeEngineImpl 
+        assertFalse(customResult.isSuccessful(), "expected jobConfigResult to be unsuccessful for custom job configuration");
+        assertFalse(defaultResult.isSuccessful(), "expected jobConfigResult to be unsuccessful for default job configuration");
     }
 }
